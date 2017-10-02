@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view class="container">
+
+  <view class="menu">
+    <text> {{ menu }} </text>
+  </view>
+
+  <view class="section" wx:if="{{ addMenuDisplay }}">
+    <input placeholder="输入菜名" bindinput='InputMenu' value="{{ newMenu }}"/>
+    <view class="btn-area">
+      <button bindtap="addMenu">添加菜品</button>
+    </view>
+  </view>
+
+  <view class="usermotto">
+    <view>
+    <button bindtap='beginSelectMenu' class="btn">
+    开始选餐
+    </button>
+
+    <button bindtap='allMenus' class="btn">
+      全部
+    </button>
+    </view>
+  </view>
+</view>
