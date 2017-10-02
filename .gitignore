@@ -1,0 +1,9 @@
+*.pyc
+*.sql
+*.swo
+*.swp
+*.pem
+flaskr
+.ropeproject
+.vscode
+setting.py
