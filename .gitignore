@@ -7,3 +7,4 @@ flaskr
 .ropeproject
 .vscode
 setting.py
+conf.ini
