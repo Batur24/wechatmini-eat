@@ -1,10 +1,11 @@
-import {log,random} from '../../utils/util.js'
+import { log, random } from '../../utils/util.js'
 
 var app = getApp()
 Page({
   data: {
     motto: '今天想吃什么',
-    menu: '今天想吃什么?',
+    menu: '今天吃什么？吃什么？',
+    beginButton: '开始选餐',
     menus: [],
     newMenu: "",
     addMenuDisplay: true,
@@ -17,73 +18,84 @@ Page({
     log('onLoad')
     let that = this
     wx.setNavigationBarTitle({
-      title: '我想吃什么'
+      title: '今天吃什么'
     })
 
-    app.getUserInfo(function(userInfo){
+    app.getUserInfo(function (userInfo) {
       that.userInfo = userInfo
       that.setData({
-        userInfo:userInfo
-      })
-      log(userInfo.nickName)
-      that.getAllMenu(userInfo.nickName)
+        userInfo: userInfo
+      });
+      that.userLogin();
+      // that.getAllMenu(userInfo.nickName)
     })
   },
 
   //事件处理函数
-  bindViewTap: function() {
+  bindViewTap: function () {
     wx.navigateTo({
       url: '../logs/logs'
     })
   },
 
-  toggleBeginStatus: function() {
+  toggleBeginStatus: function () {
     this.setData({
       begin: !this.data.begin
     })
   },
 
-  setTimer: function(newTimer) {
+  setTimer: function (newTimer) {
     this.setData({
       timer: newTimer
     })
   },
 
-  beginSelectMenu: function() {
+  beginSelectMenu: function () {
     let that = this;
     that.toggleBeginStatus();
-    if(that.data.begin){
+    if (that.data.begin) {
       let timer = setInterval(function () {
         that.setData({
           menu: random(that.data.menus),
-          addMenuDisplay: false
+          addMenuDisplay: false,
+          beginButton: '停止'
         })
       }, 100);
       that.setTimer(timer)
-    }else{
+    } else {
       clearInterval(that.data.timer);
+      that.setData({
+        beginButton: '开始选餐'
+      })
     }
   },
 
-  allMenus: function(){
-    this.getAllMenu(this.userInfo.nickName);
-    clearInterval(this.data.timer);
-    this.setData({
-      begin: false,
-      menu: this.data.menus,
-      addMenuDisplay: true
-    })
-  },
-
-  InputMenu: function(e) {
+  InputMenu: function (e) {
     this.data.newMenu = e.detail.value
   },
 
-  addMenu: function() {
+  userLogin: function () {
+    let that = this;
+    wx.request({
+      url: 'https://batur.91laysen.cn/login/',
+      data: {
+        name: this.userInfo.nickName
+      },
+      method: 'POST',
+      success: function (res) {
+        that.setData({
+          newMenu: "",
+          menu: newMenus,
+        })
+      }
+    })
+  },
+
+  addMenu: function () {
     let that = this
     let newMenu = this.data.newMenu
     let newMenus = this.data.menus
-    if(newMenu === "") return;
+    if (newMenu === "") return;
     newMenus.push(newMenu)
     wx.request({
       // url: 'http://localhost:5000/addmenu/',
@@ -93,7 +105,7 @@ Page({
         menu: newMenu
       },
       method: 'POST',
-      success: function(res){
+      success: function (res) {
         that.setData({
           newMenu: "",
           menu: newMenus,
@@ -102,7 +114,7 @@ Page({
     })
   },
 
-  getAllMenu: function(username){
+  getAllMenu: function (username) {
     let that = this;
     wx.request({
       url: 'https://batur.91laysen.cn/mymenu/?name=' + username,
@@ -113,7 +125,7 @@ Page({
       success: function (res) {
         let userMenus = res.data
         that.setData({
-          menus: userMenus 
+          menus: userMenus
         })
       }
     })

@@ -1,5 +1,22 @@
 <!--pages/allMenus/allMenus.wxml-->
-<text>pages/allMenus/allMenus.wxml</text>
 <view>
-  abcsss
+
+  <view class="menu-num">
+    <text>目前菜单包含如下45道菜</text>
+  </view>
+
+  <view class="menu">
+    <view wx:for="{{menus}}" class="menu-btn-view">
+      <button>{{item}}</button>
+    </view>
+  </view>
+
+  <view class="menu-btn-area">
+    <button class="btn delete-btn">删除菜品</button>
+    <button class="btn add-btn">添加菜品</button>
+  </view>
+
+  <view class="foot">
+    <text>友情提示：如果上面菜单不符合你日常饮食习惯，你可以通过删除菜品或者添加菜品来定制真正符合自己的菜单</text>
+  </view>
 </view>

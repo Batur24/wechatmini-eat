@@ -11,3 +11,9 @@
 .navigator-hover {
     color:blue;
 }
+.btn {
+  color: white;
+  background-color: red;
+  display: inline-block;
+  margin: 2em;
+}

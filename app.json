@@ -14,15 +14,19 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页"
+        "text": "选餐"
       },
       {
         "pagePath": "pages/allMenus/allMenus",
-        "text": "次页"
+        "text": "菜单"
       },
       {
         "pagePath": "pages/logs/logs",
-        "text": "日志"
+        "text": "减肥"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "我的"
       }
     ]
   }
