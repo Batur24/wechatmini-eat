@@ -14,19 +14,27 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "选餐"
+        "text": "选餐",
+        "iconPath": "images/eat.jpg",
+        "selectedIconPath": "images/eat_select.jpg"
       },
       {
         "pagePath": "pages/allMenus/allMenus",
-        "text": "菜单"
+        "text": "菜单",
+        "iconPath": "images/menu.jpg",
+        "selectedIconPath": "images/menu_select.jpg"
       },
       {
         "pagePath": "pages/logs/logs",
-        "text": "减肥"
+        "text": "减肥",
+        "iconPath": "images/slim.jpg",
+        "selectedIconPath": "images/slim_select.jpg"
       },
       {
         "pagePath": "pages/logs/logs",
-        "text": "我的"
+        "text": "我的",
+        "iconPath": "images/me.jpg",
+        "selectedIconPath": "images/me_select.jpg"
       }
     ]
   }

@@ -77,15 +77,17 @@ Page({
   userLogin: function () {
     let that = this;
     wx.request({
-      url: 'https://batur.91laysen.cn/login/',
+      url: 'https://batur.91laysen.cn/login',
       data: {
-        name: this.userInfo.nickName
+        name: this.userInfo.nickName,
+        menu: "猪肉炖粉条,辣子鸡,手抓饭,桂林米粉,常德牛肉粉"
       },
       method: 'POST',
       success: function (res) {
+        console.log(res.data)
         that.setData({
           newMenu: "",
-          menu: newMenus,
+          menus: res.data,
         })
       }
     })
