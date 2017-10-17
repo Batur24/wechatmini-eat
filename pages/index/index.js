@@ -28,7 +28,6 @@ Page({
 
     app.getUserInfo(function (userInfo) {
       that.userInfo = userInfo
-      log(userInfo)
       that.setData({
         userInfo: userInfo
       });
@@ -105,9 +104,8 @@ Page({
 
   userLogin: function () {
     let that = this;
-    /*
     wx.request({
-      url: 'https://batur.91laysen.cn/login',
+      url: app.globalData.url + '/login',
       data: {
         name: this.userInfo.nickName,
         menu: "猪肉炖粉条,辣子鸡,手抓饭,桂林米粉,常德牛肉粉"
@@ -121,7 +119,6 @@ Page({
         })
       }
     })
-    */
   },
 
   addMenu: function () {

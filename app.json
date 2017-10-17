@@ -1,4 +1,5 @@
 {
+  "run": "dev",
   "pages": [
     "pages/index/index",
     "pages/logs/logs",

@@ -1,5 +1,3 @@
-// pages/allMenus/allMenus.js
-
 import { log, toggleData } from '../../utils/util.js'
 
 var app = getApp()
@@ -34,8 +32,7 @@ Page({
   getAllMenu: function(username){
     let that = this;
     wx.request({
-      url: 'https://batur.91laysen.cn/mymenu/?name=' + username,
-      //url: 'http://localhost:5000/mymenu/?name=' + username,
+      url: app.globalData.url + '/mymenu/?name=' + username,
       header: {
         'content-type': 'application/json'
       },
