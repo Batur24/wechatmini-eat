@@ -1,0 +1,8 @@
+<view>
+
+  <view id="body">
+    <input id="input" placeholder="请输入菜品名字" />
+    <text id="add">继续添加</text>
+    <button id="save">保存</button>
+  </view>
+</view>

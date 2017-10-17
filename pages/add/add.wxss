@@ -1,0 +1,33 @@
+/* pages/add/add.wxss */
+page {
+  background-color: #e9e8ee
+}
+
+#body {
+  margin-top: 26rpx;
+  margin-left: 30rpx;
+  width: 690rpx;
+}
+
+#input {
+  background-color: #ffffff;
+  border-radius: 8rpx;
+  height: 90rpx;
+}
+
+#add {
+  display: block;
+  font-size: 30rpx;
+  color: #e46a43;
+  margin: 24rpx;
+}
+
+#save{
+    background-color: #e46a43;
+    color: #ffffff;
+    height: 90rpx;
+    font-size: 34rpx;
+    width: 690rpx;
+    border-radius: 8rpx;
+    margin-top: 120rpx
+}

@@ -1,0 +1,42 @@
+.menu {
+  margin: 22rpx 0 0 30rpx
+}
+
+.menuBlock {
+    color: #666666;
+    width: 220rpx;
+    height: 68rpx;
+    font-size: 24rpx;
+    display: inline-block;
+    background-color: #e9e8ee;
+    margin-right: 14rpx;
+    margin-bottom: 14rpx;
+    padding: 13rpx 0;
+    text-align: center;
+    border-radius: 8rpx;
+}
+
+#del {
+    background-color: #e46a43;
+    color: #ffffff;
+    height: 98rpx;
+    font-size: 34rpx;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-radius: 0;
+}
+
+.itemText {
+  position: relative;
+  top: 16rpx;
+}
+
+.itemImg {
+  display: inline-block;
+  position: relative;
+  margin-left: 28rpx;
+  top: 6rpx;
+  height: 36rpx;
+  width: 36rpx;
+}

@@ -1,0 +1,22 @@
+page {
+  background-color: #ececec
+}
+
+#callImg {
+  margin-top: 56rpx;
+  height: 254rpx;
+  width: 254rpx;  
+}
+
+#call {
+  font-size: 22rpx;
+  color: #999999;
+  margin-top: 24rpx;
+}
+
+#callResult {
+  margin-top: 182rpx;
+  margin-left: 30rpx;
+  font-size: 28rpx;
+  color: #666666;
+}

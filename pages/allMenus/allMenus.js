@@ -1,6 +1,6 @@
 // pages/allMenus/allMenus.js
 
-//import { log } from '../../utils.util'
+import { log, toggleData } from '../../utils/util.js'
 
 var app = getApp()
 Page({
@@ -10,25 +10,25 @@ Page({
    */
   data: {
     userInfo: {},
-    menus: []
+    menu_amount: 0,
+    menus: [],
+    delSign: "",
+    delList: [],
+    iconColor: "gray",
+    clickDelete: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let that = this
     wx.setNavigationBarTitle({
       title: '菜单'
     });
-
-    app.getUserInfo(function(userInfo){
-      that.userInfo = userInfo
-      that.setData({
-        userInfo:userInfo
-      })
-      that.getAllMenu(userInfo.nickName)
+    this.setData({
+      userInfo: app.globalData.userInfo
     });
+    this.getAllMenu(app.globalData.userInfo.nickName)
   },
 
   getAllMenu: function(username){
@@ -41,12 +41,38 @@ Page({
       },
       success: function (res) {
         let userMenus = res.data
-        console.log(userMenus)        
+        app.globalData.allMenus = userMenus
         that.setData({
-          menus: userMenus 
+          menus: userMenus ,
+          menu_amount: userMenus.length
         })
       }
     })
+  },
+
+  deleteMenu: function() {
+    wx.navigateTo("/pages/delete/delete")
+    /*
+    this.setData({
+      clickDelete: true
+    })
+    */
+  },
+
+  toggleSelectMenu: function(event) {
+    let that = this
+    let menu = event.currentTarget.dataset.menu
+    if(that.data.delSign == "x"){
+      let delList = that.data.delList
+      delList = toggleData(menu, delList)
+      that.setData({
+        delList: delList
+      })
+    }
+  },
+
+  globalData: {
+    allMenus: null
   },
 
   /**

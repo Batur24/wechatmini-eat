@@ -2,7 +2,14 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/allMenus/allMenus"
+    "pages/allMenus/allMenus",
+    "pages/me/me",
+    "pages/delete/delete",
+    "pages/add/add",
+    "pages/slim/slim",
+    "pages/about/about",
+    "pages/support/support",
+    "pages/feedback/feedback"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -25,13 +32,13 @@
         "selectedIconPath": "images/menu_select.jpg"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/slim/slim",
         "text": "减肥",
         "iconPath": "images/slim.jpg",
         "selectedIconPath": "images/slim_select.jpg"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/me/me",
         "text": "我的",
         "iconPath": "images/me.jpg",
         "selectedIconPath": "images/me_select.jpg"

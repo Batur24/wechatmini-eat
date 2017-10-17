@@ -1,0 +1,21 @@
+<view>
+  <image id="icon" src="/images/icon.png" />
+  <view  id="describe">
+    <text>
+      "今天吃什么"是为一款一到饭点时间就纠结今天该吃什么的选择困难症用户开发的小程序, 用户可以自定义属于自己的菜谱, "今天吃什么"帮你决定今天吃啥, 让你不再究竟
+    </text>
+  </view>
+
+  <view id="designAnddeveloper">
+    <view>
+      <text>设计者:</text>
+      <text class="nickName">江南布衣</text>
+      <text>(微信号rolling1stone)</text>
+    </view>
+    <view>
+      <text>开发者:</text>
+      <text class="nickName">Batur</text>
+      <text>(微信号heshupai)</text>
+    </view>
+  </view>
+</view>

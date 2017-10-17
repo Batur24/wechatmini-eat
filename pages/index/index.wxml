@@ -1,17 +1,26 @@
 <!--index.wxml-->
-<view class="container">
+<view class="body">
+  
+  <swiper autoplay="true" indicator-dots="true" interval="5000" 
+    duration="1000" indicator-color="white" indicator-active-color="orange">
+    <block wx:for="{{imgUrls}}" wx:key="*this">
+      <swiper-item>
+        <image src="{{item}}" class="swiperImg"></image>
+      </swiper-item>
+    </block>
+  </swiper>
 
-  <view style="height: 200px">
-    <view class="menu">
-      <text> {{ menu }} </text>
-    </view>
+  <view id="dialogue">
+    <text>{{ dialogue }}</text>
   </view>
 
-  <view class="usermotto">
-    <view>
-      <button bindtap='beginSelectMenu' class="btn select-menu-btn">
-    {{ beginButton }}
-    </button>
-    </view>
+  <image id="indicatorArrow" src="/images/arrow.png" />
+
+  <view id="menu">
+      <text> {{ menu }} </text>
+  </view>
+
+  <view>
+      <button bindtap='beginSelectMenu' id="selectBtn">{{ beginButton }}</button>
   </view>
 </view>

@@ -29,9 +29,20 @@ const log = (msg) => {
   console.log(msg)
 }
 
+const toggleData = (item, items) => {
+  let index = items.indexOf(item);
+  if(index > -1){
+    items.splice(index, 1)
+  }else{
+    items.push(item)
+  }
+  return items
+}
+
 module.exports = {
   formatTime: formatTime,
   random: random,
   sleep: sleep,
-  log: log
+  log: log,
+  toggleData: toggleData
 }

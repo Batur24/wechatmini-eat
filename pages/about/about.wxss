@@ -1,0 +1,28 @@
+page {
+  background-color: #ececec;
+  text-align: center;
+}
+
+#icon{
+  margin-top: 60rpx;
+  height: 148rpx;
+  width: 148rpx;
+}
+
+#describe {
+  margin: 68rpx 38rpx;
+  font-size: 28rpx;
+  color: #666666;
+  text-align: left;
+}
+
+#designAnddeveloper {
+  margin: 6rpx 38rpx;
+  font-size: 28rpx;
+  color: #666666;
+  text-align: left;
+}
+
+.nickName {
+  color: #e46a43;
+}

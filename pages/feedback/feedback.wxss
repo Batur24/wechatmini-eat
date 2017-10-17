@@ -1,0 +1,27 @@
+page {
+  background-color: #ececec
+}
+
+#feedbackInput {
+  margin: 26rpx 30rpx 66rpx 30rpx;
+  width: 690rpx;
+  height: 310rpx;
+  background-color: #ffffff;
+}
+
+.placeHolder {
+  text-align:left;
+  font-size: 28rpx;
+}
+
+.centerStyle {
+  text-align: center;
+}
+
+#btn {
+  height: 90rpx;
+  width: 690rpx;
+  background-color: #e46a43;
+  color: #ffffff;
+  font-size: 34rpx;
+}

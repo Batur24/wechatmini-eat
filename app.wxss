@@ -1,19 +1,47 @@
-/**app.wxss**/
+#body{
+  text-align: center
+}
 .container {
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 200rpx 0;
   box-sizing: border-box;
 } 
 .navigator-hover {
     color:blue;
 }
+
+.slide-image{
+    width: 100%;
+    height: 100%;
+}
+
+swiper {
+  width: 100%
+}
+
+image {
+  width: 100%;
+  height: 100%;
+}
+
 .btn {
-  color: white;
-  background-color: red;
-  display: inline-block;
-  margin: 2em;
+    font-size: 30rpx;
+    height: 76rpx;
+    width: 330rpx;
+    display: inline-block;
+}
+
+.add-btn {
+    color: #333333;
+    background-color: #e46a43;
+    margin-left: 35rpx;
+    color: white;
+}
+
+.delete-btn {
+    color: #333333;
+    background-color: white;
 }

@@ -1,0 +1,12 @@
+<view>
+  <view class="menu">
+    <view wx:key="*this" wx:for="{{menus}}" class="menuBlock">
+      <block data-menu="{{item}}" bindtap="toggleSelectMenu">
+        <text class="itemText">{{item}}</text>
+        <image class="itemImg" src="/images/unSelected.png" />
+      </block>
+    </view>
+  </view>
+
+  <button id="del" class="btn">删除菜品</button>
+</view>

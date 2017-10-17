@@ -1,0 +1,28 @@
+<view>
+    <view id="userBanner">
+        <image id="userImg" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+        <view id="userInfo">
+            <view id="nickName">{{userInfo.nickName}}</view>
+            <view id="userDescribe">一枚吃货</view>
+        </view>
+    </view>
+
+    <view id="items">
+        <navigator id="about" class="listItem" url="/pages/about/about">
+            <image class="leftIcon" src="/images/about.png" />
+            <text class="itemText">关于今天吃什么</text>
+            <image class="rightIcon" src="/images/next.png" />
+        </navigator>
+        <navigator id="feedback" class="listItem" url="/pages/feedback/feedback">
+            <image class="leftIcon" src="/images/feedback.png" />
+            <text class="itemText">意见反馈</text>
+            <image class="rightIcon" src="/images/next.png" />
+        </navigator>
+        <navigator id="support" class="listItem" url="/pages/support/support">
+            <image class="leftIcon" src="/images/support.png" />
+            <text class="itemText">给开发者打CALL</text>
+            <image class="rightIcon" src="/images/next.png" />
+        </navigator>
+    </view>
+
+</view>

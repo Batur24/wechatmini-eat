@@ -3,26 +3,32 @@ import { log, random } from '../../utils/util.js'
 var app = getApp()
 Page({
   data: {
-    motto: '今天想吃什么',
-    menu: '今天吃什么？吃什么？',
+    dialogue: '今天吃什么？吃什么？',
+    menu: '',
     beginButton: '开始选餐',
+    clickTimes: 0,
     menus: [],
     newMenu: "",
-    addMenuDisplay: true,
     begin: false,
     userInfo: {},
-    timer: undefined
+    timer: undefined,
+    imgUrls: [
+      '/images/banner2.jpg',
+      '/images/banner1.jpg',
+      '/images/banner4.png',
+      '/images/banner3.jpg',
+    ],
+    autoplay: true,
+    indicatorDots: false
   },
 
   onLoad: function () {
     log('onLoad')
     let that = this
-    wx.setNavigationBarTitle({
-      title: '今天吃什么'
-    })
 
     app.getUserInfo(function (userInfo) {
       that.userInfo = userInfo
+      log(userInfo)
       that.setData({
         userInfo: userInfo
       });
@@ -40,7 +46,8 @@ Page({
 
   toggleBeginStatus: function () {
     this.setData({
-      begin: !this.data.begin
+      begin: !this.data.begin,
+      clickTimes: this.data.clickTimes + 1
     })
   },
 
@@ -50,23 +57,45 @@ Page({
     })
   },
 
+  changeDialogue: function (clickTimes) {
+    let returnObj = { beginButton: "", dialogue: "你今天吃这个" }
+    log(clickTimes)
+    switch (clickTimes) {
+      case 2:
+        returnObj.beginButton = "不行，换一个"
+        break
+      case 4:
+        returnObj.beginButton = "不行，再换一个"
+        break
+      case 6:
+        returnObj.beginButton = "换最后一个"
+        break
+      case 8:
+        returnObj.beginButton = "还想换"
+        break
+      case 10:
+        returnObj.beginButton = ""
+        break
+    }
+    log(returnObj)
+    this.setData(returnObj)
+},
+
   beginSelectMenu: function () {
     let that = this;
     that.toggleBeginStatus();
     if (that.data.begin) {
       let timer = setInterval(function () {
         that.setData({
+          dialogue: "今天吃什么？吃什么？",
           menu: random(that.data.menus),
-          addMenuDisplay: false,
           beginButton: '停止'
         })
       }, 100);
       that.setTimer(timer)
     } else {
       clearInterval(that.data.timer);
-      that.setData({
-        beginButton: '开始选餐'
-      })
+      that.changeDialogue(that.data.clickTimes);
     }
   },
 
@@ -76,6 +105,7 @@ Page({
 
   userLogin: function () {
     let that = this;
+    /*
     wx.request({
       url: 'https://batur.91laysen.cn/login',
       data: {
@@ -91,6 +121,7 @@ Page({
         })
       }
     })
+    */
   },
 
   addMenu: function () {

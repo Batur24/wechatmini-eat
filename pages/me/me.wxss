@@ -1,0 +1,79 @@
+page {
+    background-color: #e9e8ee;
+}
+
+#userBanner {
+    height: 280rpx;
+    background-color: #1b1b1b;
+    margin-bottom: 20rpx;
+}
+
+#userImg, #userInfo {
+    display: inline-block;
+}
+
+#nickName {
+    margin-top: 92rpx;
+    font-size: 34rpx;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#userDescribe {
+    margin-top: 32rpx;
+    font-size: 26rpx;
+    color: #aaaaaa;
+}
+
+#userImg {
+    width: 138rpx;
+    height: 136rpx;
+    margin-top: 73rpx;
+    margin-left: 56rpx;
+    margin-right: 34rpx;
+}
+
+.userAvatarView {
+    text-align: center;
+}
+
+.userinfo-avatar {
+    width: 120px;
+    height: 120px;
+}
+
+#items{
+    background-color: #ffffff;
+}
+
+.leftIcon {
+    height: 40rpx;
+    width: 40rpx;
+    position: relative;
+    top: 25rpx;
+    margin-right: 22rpx;
+}
+
+.rightIcon {
+    height: 40rpx;
+    width: 40rpx;
+    position: absolute;
+    right: 30rpx;
+    margin-top: 30rpx;
+}
+
+#about, #feedback{
+    border-bottom: solid 1px #dcdcdc;
+}
+
+.listItem {
+    margin-left: 30rpx;
+    height: 90rpx;
+}
+
+.itemText {
+    position: relative;
+    font-size: 30rpx;
+    color: #333333;
+    top: 15rpx;
+}

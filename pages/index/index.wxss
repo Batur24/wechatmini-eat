@@ -1,28 +1,51 @@
-/**index.wxss**/
-.userinfo {
+page {
+  background-color: #e9e8ee;
+}
+text {
+  font-size: 30rpx;
+  color: #333333;
+}
+.body{
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.menu {
-  margin-top: 40rpx;
-  height: 5em;
-  width: 15em;
-  text-align: center;
+  justify-content: space-between;
+  box-sizing: border-box;
 }
 
 .select-menu-btn {
-  width: 15em 
+  width: 710rpx 
+}
+
+.swiperImg {
+  height: 290;
+}
+
+#dialogue {
+  margin-top: 88rpx;
+}
+
+#indicatorArrow {
+  margin-top: 28rpx;
+  height: 64rpx; 
+  width: 34rpx;
+}
+
+#menu {
+  margin-top: 102rpx;
+}
+
+#menu text {
+  font-size: 38rpx;
+  color: #f62901;
+}
+
+#selectBtn {
+  margin-top: 66rpx;
+  height: 88rpx;
+  width: 690rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color: #FFFFFF;
+  background-color: #e46a43;
 }
