@@ -7,11 +7,12 @@ page {
   width: 690rpx;
   height: 310rpx;
   background-color: #ffffff;
+  border-radius: 8rpx;
 }
 
 .placeHolder {
-  text-align:left;
   font-size: 28rpx;
+  padding-left: 20rpx;
 }
 
 .centerStyle {

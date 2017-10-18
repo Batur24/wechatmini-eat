@@ -1,25 +1,33 @@
 /* pages/add/add.wxss */
 page {
-  background-color: #e9e8ee
+  background-color: #e9e8ee;
 }
 
 #body {
   margin-top: 26rpx;
   margin-left: 30rpx;
   width: 690rpx;
+  text-align: left;
 }
 
-#input {
+.input {
+  margin-bottom: 20rpx;
   background-color: #ffffff;
   border-radius: 8rpx;
   height: 90rpx;
 }
 
+.psection {
+  margin-left: 20rpx;
+}
+
+#addBlock {
+  text-align: left;
+}
+
 #add {
-  display: block;
   font-size: 30rpx;
   color: #e46a43;
-  margin: 24rpx;
 }
 
 #save{

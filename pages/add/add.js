@@ -1,20 +1,46 @@
-// pages/add/add.js
+var app = getApp()
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    userInfo: null,
+    inputNum: ["n0"],
+    menu: []
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-  
+    this.setData({
+      userInfo: app.globalData.userInfo
+    })
   },
 
+  addMenu: function () {
+    let newInputNum = this.data.inputNum;
+    newInputNum.push("n" + newInputNum.length);
+    this.setData({
+      inputNum: newInputNum
+    })
+  },
+
+  formSubmt: function (e) {
+    let values = e.detail;
+    console.log(values)
+    let that = this;
+    let newMenu = this.data.menu;
+    wx.request({
+      url: app.globalData.url + '/addmenu',
+      data: {
+        name: that.userInfo.nickName,
+        menu: values
+      },
+      method: 'POST',
+      success: function (res) {
+        that.setData({
+          newMenu: "",
+          inputNum: [""]
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

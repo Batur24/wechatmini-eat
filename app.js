@@ -26,8 +26,9 @@ App({
   },
   globalData:{
     userInfo:null,
-    url: "http://localhost:5000"
+    url: "https://batur.91laysen.cn"
   }
 })
 
-// https://batur.91laysen.cn
+//url: "https://batur.91laysen.cn"
+//url: "http://localhost:5000"

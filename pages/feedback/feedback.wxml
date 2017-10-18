@@ -1,4 +1,4 @@
-<view id="body">
+<view>
   <textarea id="feedbackInput" placeholder="如果你在使用中出现什么问题或有任何建议, 请在这里写下来, 我们将会改进。"
   placeholder-class="placeHolder"/>
 
