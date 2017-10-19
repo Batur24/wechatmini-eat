@@ -14,7 +14,7 @@
     <text>{{ dialogue }}</text>
   </view>
 
-  <image id="indicatorArrow" src="/images/arrow.png" />
+  <image wx:if="{{ begin }}" id="indicatorArrow" src="/images/arrow.png" />
 
   <view id="menu">
       <text> {{ menu }} </text>

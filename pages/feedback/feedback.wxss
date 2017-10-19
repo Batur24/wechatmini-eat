@@ -26,3 +26,15 @@ page {
   color: #ffffff;
   font-size: 34rpx;
 }
+
+#success {
+  width: 300rpx;
+  height: 60rpx;
+  font-size: 28rpx;
+  background-color: #e46a43;
+  color: #ffffff;
+  border-radius: 30rpx;
+  position: absolute;
+  top: 40rpx;
+  left: 225rpx;
+}

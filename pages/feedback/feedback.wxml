@@ -3,6 +3,10 @@
   placeholder-class="placeHolder"/>
 
   <view class="centerStyle">
-    <button id="btn">提交</button>
+    <button id="btn" bindtap="submit">提交</button>
+  </view>
+
+  <view>
+    <button wx:if="{{ success }}" id="success">意见提交成功</button>
   </view>
 </view>
