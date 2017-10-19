@@ -26,7 +26,6 @@ Page({
     this.setData({
       userInfo: app.globalData.userInfo
     });
-    this.getAllMenu(app.globalData.userInfo.nickName)
   },
 
   getAllMenu: function(username){
@@ -83,7 +82,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getAllMenu(app.globalData.userInfo.nickName)
   },
 
   /**

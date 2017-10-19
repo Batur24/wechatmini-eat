@@ -108,7 +108,7 @@ Page({
       url: app.globalData.url + '/login',
       data: {
         name: this.userInfo.nickName,
-        menu: "猪肉炖粉条,辣子鸡,手抓饭,桂林米粉,常德牛肉粉"
+        menu: "盖浇饭, 砂锅, 大排档, 米线, 西餐, 麻辣烫, 自助餐, 炒面, 快餐, 水果, 混沌, 火锅, 烧烤, 泡面, 速冻水饺, 日本料理, 涮羊肉"
       },
       method: 'POST',
       success: function (res) {

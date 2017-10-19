@@ -39,10 +39,16 @@ const toggleData = (item, items) => {
   return items
 }
 
+function remove(array, element) {
+  const index = array.indexOf(element);
+  array.splice(index, 1);
+}
+
 module.exports = {
   formatTime: formatTime,
   random: random,
   sleep: sleep,
   log: log,
-  toggleData: toggleData
+  toggleData: toggleData,
+  remove: remove
 }

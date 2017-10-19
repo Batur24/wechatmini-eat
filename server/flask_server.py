@@ -1,5 +1,6 @@
 # coding=utf8
 import json
+import os
 from setting import app, db
 from model import UserMenu
 from flask import request
@@ -33,11 +34,38 @@ def mymenu():
 
 @app.route('/addmenu/', methods=['POST'])
 def addmenu():
-    test = json.dumps({"result": "ok"})
+    result = {"result": "fail", "msg": ""}
+
     data = json.loads(request.data)
+    print(data)
     user = UserMenu.query.filter_by(name=data["name"]).first()
     if data["menu"] in user.menus:
-        return test
+        result["msg"] = "exist"
+        return json.dumps(result)
     user.menus = user.menus + "," + data["menu"]
     db.session.commit()
-    return test
+    result["result"] = "success"
+    return json.dumps(result)
+
+@app.route('/deletemenu/', methods=['POST'])
+def deletemenu():
+    result = {"result": "fail", "msg": ""}
+
+    data = json.loads(request.data)
+    print(data)
+    user = UserMenu.query.filter_by(name=data["name"]).first()
+    menus = user.menus.split(",")
+
+    print(data["menus"])
+    for del_menu in data["menus"]:
+        menus.remove(del_menu["name"])
+    # menus.remove(data["menu"].name)
+    user.menus = ",".join(menus)
+    try:
+        db.session.commit()
+        result["result"] = "success"
+    except:
+        raise
+        result["msg"] = "err"
+    return json.dumps(result)
+

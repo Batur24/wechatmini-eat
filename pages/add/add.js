@@ -22,23 +22,19 @@ Page({
   },
 
   formSubmt: function (e) {
-    let values = e.detail;
-    console.log(values)
     let that = this;
-    let newMenu = this.data.menu;
+    let menuName = e.detail.value.menuName;
     wx.request({
-      url: app.globalData.url + '/addmenu',
+      url: app.globalData.url + '/addmenu/',
       data: {
-        name: that.userInfo.nickName,
-        menu: values
+        name: that.data.userInfo.nickName,
+        menu: menuName
       },
       method: 'POST',
       success: function (res) {
-        that.setData({
-          newMenu: "",
-          inputNum: [""]
-        })
-      }
+        console.log(res)
+        wx.navigateBack()
+        }
     })
   },
   /**
