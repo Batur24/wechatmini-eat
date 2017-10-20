@@ -73,13 +73,12 @@ def feedback():
     result = {"result": "fail", "msg": ""}
 
     data = json.loads(request.data)
-    print(data)
     try:
         user = UserMenu.query.filter_by(name=data["name"]).first()
         feedback = json.loads(user.feedback)
-        new_feedback = {"time": datetime.now.strftime("%Y-%m-%d %H:%M:%S"), "content": data}
+        new_feedback = {"time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "content": data["feedback"]}
         feedback.append(new_feedback)
-        user.feedback = feedback
+        user.feedback = json.dumps(feedback)
         db.session.commit()
         result["result"] = "success"
     except:
@@ -87,3 +86,10 @@ def feedback():
         result["msg"] = "err"
     return json.dumps(result)
 
+@app.route('/support/', methods=['GET','POST'])
+def support():
+    result = {"result": "success", "msg": "", "value": []}
+    users = UserMenu.query.all()
+    user_list = map(lambda user: user.name, users)
+    result["value"] = user_list
+    return json.dumps(result)

@@ -1,4 +1,6 @@
-// pages/feedback/feedback.js
+
+import { log } from '../../utils/util'
+var app = getApp()
 Page({
 
   /**
@@ -15,8 +17,17 @@ Page({
 
   },
 
-  submit: function () {
+  submitFeedback: function (e) {
+    let value = e.detail.value;
     let that = this;
+    wx.request({
+      url: app.globalData.url + "/feedback/",
+      data: {
+        "name": app.globalData.userInfo.nickName,
+        "feedback": value.feedback
+      },
+      method: "POST"
+    })
     that.setData({
       success: true
     });

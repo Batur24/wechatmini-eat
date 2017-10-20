@@ -5,7 +5,7 @@
   </view>
 
   <view id="callResult">
-    已有xxxxx
+    已有 <text id="supportors">{{ supportors }}</text>等{{ supportors.length }}位开发者打CALL
   </view>
 </view>
 

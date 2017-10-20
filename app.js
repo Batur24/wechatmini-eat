@@ -27,7 +27,7 @@ App({
   globalData:{
     userInfo:null,
     allMenus: [],
-    url: "https://batur.91laysen.cn"
+    url: true ? "https://batur.91laysen.cn" : "http://localhost:5000"
   }
 })
 

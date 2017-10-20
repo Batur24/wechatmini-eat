@@ -1,12 +1,15 @@
 <view>
-  <textarea id="feedbackInput" placeholder="如果你在使用中出现什么问题或有任何建议, 请在这里写下来, 我们将会改进。"
-  placeholder-class="placeHolder"/>
 
-  <view class="centerStyle">
-    <button id="btn" bindtap="submit">提交</button>
-  </view>
+  <form bindsubmit="submitFeedback">
+    <textarea id="feedbackInput" name="feedback" placeholder="如果你在使用中出现什么问题或有任何建议, 请在这里写下来, 我们将会改进。" placeholder-class="placeHolder"
+    />
 
-  <view>
-    <button wx:if="{{ success }}" id="success">意见提交成功</button>
-  </view>
+    <view class="centerStyle">
+      <button id="btn" formType="submit">提交</button>
+    </view>
+
+    <view>
+      <button wx:if="{{ success }}" id="success">意见提交成功</button>
+    </view>
+  </form>
 </view>

@@ -20,3 +20,7 @@ page {
   font-size: 28rpx;
   color: #666666;
 }
+
+#supportors {
+  color: #e46a43
+}
