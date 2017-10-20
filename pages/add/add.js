@@ -1,3 +1,5 @@
+import { log } from '../../utils/util'
+
 var app = getApp()
 Page({
 
@@ -21,14 +23,24 @@ Page({
     })
   },
 
+  addToMenus: function (e) {
+    let tempMenus = this.data.menu;
+    let v = e.detail.value;
+    tempMenus.push(v);
+    tempMenus = Array.from(new Set(tempMenus));
+    tempMenus.filter(item => item);
+    this.setData({
+      menu: tempMenus
+    })
+  },
+
   formSubmt: function (e) {
     let that = this;
-    let menuName = e.detail.value.menuName;
     wx.request({
       url: app.globalData.url + '/addmenu/',
       data: {
         name: that.data.userInfo.nickName,
-        menu: menuName
+        menu: that.data.menu
       },
       method: 'POST',
       success: function (res) {

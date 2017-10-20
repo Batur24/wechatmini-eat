@@ -40,10 +40,8 @@ def addmenu():
     data = json.loads(request.data)
     print(data)
     user = UserMenu.query.filter_by(name=data["name"]).first()
-    if data["menu"] in user.menus:
-        result["msg"] = "exist"
-        return json.dumps(result)
-    user.menus = user.menus + "," + data["menu"]
+    menus = ",".join(data["menu"])
+    user.menus = user.menus + "," + menus
     db.session.commit()
     result["result"] = "success"
     return json.dumps(result)

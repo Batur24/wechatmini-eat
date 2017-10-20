@@ -2,7 +2,11 @@
   <view id="body">
 
     <form bindsubmit="formSubmt">
-      <input name="menuName" class="input" placeholder="请输入菜品名字" placeholder-class="psection" />
+      <block wx:for="{{ inputNum }}" wx:key="{{*this}}">
+        <!-- <input name="menuName" class="input" placeholder="请输入菜品名字" placeholder-class="psection" /> -->
+        <input name="{{ item }}" class="input" placeholder="请输入菜品名字" placeholder-class="psection" 
+        bindblur="addToMenus"/>
+      </block>
 
       <view id="addBlock">
         <text id="add" bindtap="addMenu">继续添加</text>
