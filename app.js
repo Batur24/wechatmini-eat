@@ -26,6 +26,7 @@ App({
   },
   globalData:{
     userInfo:null,
+    allMenus: [],
     url: "https://batur.91laysen.cn"
   }
 })

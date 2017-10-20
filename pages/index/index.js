@@ -32,7 +32,6 @@ Page({
         userInfo: userInfo
       });
       that.userLogin();
-      // that.getAllMenu(userInfo.nickName)
     })
   },
 
@@ -87,7 +86,7 @@ Page({
       let timer = setInterval(function () {
         that.setData({
           dialogue: "今天吃什么？吃什么？",
-          menu: random(that.data.menus),
+          menu: random(app.globalData.allMenus),
           beginButton: '停止'
         })
       }, 100);
@@ -112,7 +111,7 @@ Page({
       },
       method: 'POST',
       success: function (res) {
-        console.log(res.data)
+        app.globalData.allMenus = res.data;
         that.setData({
           newMenu: "",
           menus: res.data,
@@ -121,6 +120,7 @@ Page({
     })
   },
 
+/*
   addMenu: function () {
     let that = this
     let newMenu = this.data.newMenu
@@ -143,6 +143,7 @@ Page({
       }
     })
   },
+*/
 
   getAllMenu: function (username) {
     let that = this;

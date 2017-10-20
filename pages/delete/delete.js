@@ -41,14 +41,17 @@ Page({
 
   deleteMenu: function (e) {
     let that = this;
+    let deleteMenus = that.data.menus.filter(menu => menu.status == true)
     wx.request({
       url: app.globalData.url + '/deletemenu/',
       data: {
-        "menus": that.data.menus.filter(menu => menu.status == true),
+        "menus": deleteMenus,
         "name": that.data.userInfo.nickName
       },
       method: 'POST',
       success: function (res) {
+        let menus = app.globalData.allMenus;
+        app.globalData.allMenus = menus.filter(item => !deleteMenus.includes(item))
         wx.navigateBack()
         log(res)
       }

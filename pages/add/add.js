@@ -44,7 +44,7 @@ Page({
       },
       method: 'POST',
       success: function (res) {
-        console.log(res)
+        app.globalData.allMenus = app.globalData.allMenus.concat(that.data.menu)
         wx.navigateBack()
         }
     })
