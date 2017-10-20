@@ -9,6 +9,7 @@ class UserMenu(db.Model):
     name = db.Column(db.String(20))
     menus = db.Column(db.String(2000))
     city = db.Column(db.String(20))
+    feedback = db.Column(db.String(2000))
 
     def __repr__(self):
         return '<UserMenu %r>' %self.name

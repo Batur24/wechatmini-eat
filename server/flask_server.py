@@ -1,6 +1,7 @@
 # coding=utf8
 import json
 import os
+from datetime import datetime
 from setting import app, db
 from model import UserMenu
 from flask import request
@@ -62,6 +63,25 @@ def deletemenu():
     # menus.remove(data["menu"].name)
     user.menus = ",".join(menus)
     try:
+        db.session.commit()
+        result["result"] = "success"
+    except:
+        raise
+        result["msg"] = "err"
+    return json.dumps(result)
+
+@app.route('/feedback/', methods=['POST'])
+def feedback():
+    result = {"result": "fail", "msg": ""}
+
+    data = json.loads(request.data)
+    print(data)
+    try:
+        user = UserMenu.query.filter_by(name=data["name"]).first()
+        feedback = json.loads(user.feedback)
+        new_feedback = {"time": datetime.now.strftime("%Y-%m-%d %H:%M:%S"), "content": data}
+        feedback.append(new_feedback)
+        user.feedback = feedback
         db.session.commit()
         result["result"] = "success"
     except:
