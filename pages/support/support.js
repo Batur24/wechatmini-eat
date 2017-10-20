@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    supportImg: "/images/call.png"
   },
 
   /**
@@ -20,6 +20,12 @@ Page({
    */
   onReady: function () {
   
+  },
+
+  support: function () {
+    this.setData({
+      supportImg: "/images/callAfter.png"
+    })
   },
 
   /**

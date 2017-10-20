@@ -1,6 +1,6 @@
 <view id="body">
   <view>
-    <image id="callImg" src="/images/call.png" />
+    <image id="callImg" src="{{ supportImg }}" bindtap="support"/>
     <view id="call">(点击上面图片即可为开发者打CALL)</view>
   </view>
 
