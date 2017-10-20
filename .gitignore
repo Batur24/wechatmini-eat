@@ -8,3 +8,9 @@ flaskr
 .vscode
 setting.py
 conf.ini
+server/migrations/alembic.ini
+server/migrations/env.py
+server/migrations/README
+server/migrations/README
+server/migrations/script.py.mako
+server/migrations/versions/63c5861c6c0e_.py
